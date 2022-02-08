@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   get 'chat/:id' => 'chats#show', as: '/chat'
   resources :chats, only: [:create]
 
-  resources :users, only: [:show, :edit, :update] do
+  resources :users, only: [:show, :edit, :update, :index] do
     resource :relationships, only: [:create, :destroy]
-    get :followeds, on: :member
+    get :followings, on: :member # on: :memberでルーティングにidを含めることができる
     get :followers, on: :member
   end
 
