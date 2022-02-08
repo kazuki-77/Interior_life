@@ -1,22 +1,26 @@
  <header>
-      <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="/"><%= link_to 'Interior Life', '/' %></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expaded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbaar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-            <% if user_signed_in? %>
-              <li><%# link_to 'マイページ', user_path(current_user), class: 'nav-link list-item' %></li>
-              <li><%# link_to '投稿一覧', post_images_path, class: 'nav-link list-item' %></li>
-              <li><%# link_to '新規投稿', new_post_image_path, class: 'nav-link list-item' %></li>
-              <li><%# link_to 'ログアウト', destroy_user_ssesion_path, class: 'nav-link list-item' %></li>
-            <% else %>
-              <li><%# link_to 'About', about_path, class: 'nav-list list-item' %></li>
-              <li><%# link_to '新規登録', new_user_registration_path, class: 'nav-link list-item' %></li>
-              <li><%# link_to 'ログイン', new_user_session_path, class: 'nav-link list-item' %></li>
-            <% end %>
-          </ul>
-        </div>
-      </nav>
-    </header>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <%= link_to 'Interior Life', '/' %>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+        <% if user_signed_in? %>
+          <li><%= link_to 'マイページ', user_path(current_user), class: 'nav-link list-item text-dark' %></li>
+          <li><%= link_to 'ユーザー', users_path, class: 'nav-link list-item text-dark' %></li>
+          <li><%= link_to '投稿一覧', post_images_path, class: 'nav-link list-item text-dark' %></li>
+          <li><%= link_to '新規投稿', new_post_image_path, class: 'nav-link list-item text-dark' %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link list-item text-dark' %></li>
+        <% else %>
+          <li><%= link_to ' Home',root_path,class: 'fas fa-home nav-link text-dark' %></li>
+          <li><%= link_to ' About',about_path,class: 'fas fa-link nav-link text-dark' %></li>
+          <li><%= link_to ' sign up', new_user_registration_path,class: 'fas fa-user-plus nav-link text-dark' %></li>
+          <li><%= link_to ' login', new_user_session_path ,class: 'fas fa-sign-in-alt nav-link text-dark'%></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

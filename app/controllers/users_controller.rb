@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     # idがcurrent_user以外のユーザーを取得する
-    @user = User.where.not(id: current_uer.id)
+    @user = User.where.not(id: current_user.id)
   end
   def show
     @user = User.find(params[:id])
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
     if user != current_user
-      redirect_to user_path(current_uer.id)
+      redirect_to user_path(current_user.id)
     end
   end
 
