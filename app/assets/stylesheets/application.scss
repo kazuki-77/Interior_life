@@ -16,3 +16,8 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
+
+.navbar-light .navbar-toggle {
+  background-color: rgba(0,0,0,0);
+}

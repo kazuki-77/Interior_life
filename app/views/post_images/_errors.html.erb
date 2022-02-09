@@ -1,0 +1,6 @@
+<% if post_image.errors.any? %>
+  <%= post_image.errors.count %>件のエラーが発生しました。
+  <% post_image.errors.full_massages.each do |message| %>
+    <%= message %>
+  <% end %>
+<% end %>
