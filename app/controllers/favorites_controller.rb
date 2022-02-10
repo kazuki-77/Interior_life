@@ -5,7 +5,7 @@ class FavoritesController < ApplicationController
     # 投稿に紐付け、いいねをする
     favorite = current_user.favorites.new(post_image_id: post_image.id)
     favorite.save
-    redirect_to post_image_path(post_image)
+    redirect_to request.referer
   end
 
   def destroy
@@ -13,7 +13,7 @@ class FavoritesController < ApplicationController
     # 投稿に紐づいたいいねを取得する
     favorite = current_user.favorites.find_by(post_image_id: post_image.id)
     favorite.destroy
-    redirect_to post_image_path(post_image)
+    redirect_to request.referer
   end
 
 end

@@ -7,7 +7,7 @@ class ChatsController < ApplicationController
    rooms = current_user.user_rooms.pluck(:room_id)
    # user_roomモデルから、user_idが相手のidが一致するものと、
    # room_idがroomsのどれかに一致するレコードをuser_roomsに代入
-   user_rooms = User_Room.find_by(user_id: @user.id, room_id: rooms)
+   user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
 
    # もしuser_roomでルームが存在していなかったら
    unless user_rooms.nil?
@@ -21,7 +21,7 @@ class ChatsController < ApplicationController
      UserRoom.create(user_id: current_user.id, room_id: @room.id)
      UserRoom.create(user_id: @user.id, room_id: @room.id)
    end
-   
+
    # roomに紐づくchatsテーブルのレコードを@chatsに格納
    @chats = @room.chats
    # form_withでチャットを送信する際に必要な空のインスタンス
@@ -32,6 +32,13 @@ class ChatsController < ApplicationController
   def create
     @chat = current_user.chats.new(chat_params)
     @chat.save
+    redirect_to request.referer
+  end
+
+  private
+
+  def chat_params
+    params.require(:chat).permit(:message, :room_id)
   end
 
 end

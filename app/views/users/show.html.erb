@@ -2,15 +2,19 @@
   <div class="row">
     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no-image.jpg", class: "rounded-circle" %>
     <% if @user == current_user %>
-      <%= link_to "編集", edit_user_path(@user), class: "btn btn-secondary text-right" %>
+      <div class="col-2 d-flex align-items-end"><%= link_to ' 編集',edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{@user.id} " %></div>
+    <% else %>
+      <% if @user.is_followed_by?(current_user) %>
+        <div class="col-2 d-flex align-items-end">
+          <%= link_to "フォロー中", user_relationships_path(@user), method: :delete, class: "btn btn-danger" %>
+          <%= link_to chat_path(@user.id) do %>
+            <i class="fas fa-envelope fa-2x ml-3"></i>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="col-2 d-flex align-items-end"><%= link_to "フォローする", user_relationships_path(@user), method: :post, class: "btn btn-primary"  %></div>
+      <% end %>
     <% end %>
-    <!--< if @user != current_user %>-->
-    <!--  < if @user.is_followed_by?(current_user) %>-->
-    <!--    <= link_to "フォロー外す", user_relationships_path(@user), method: :delete %>-->
-    <!--  < else %>-->
-    <!--    <= link_to "フォローする", user_relationships_path(@user), method: :post %>-->
-    <!--  < end %>-->
-    <!--< end %>-->
   </div>
   <hr>
   <div class="row">
@@ -20,8 +24,8 @@
     <p><%= @user.introduction %></p>
   </div>
   <div class="row">
-    <%#= link_to "#{@user.followings.count} フォロー中", following_user_path(@user) %>
-    <%#= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %>
+    <div><%= link_to "#{@user.followings.count} フォロー中", followings_user_path(@user) %></div>
+    <div><%= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %><div>
   </div>
   <div class="row">
     <%= render 'post_images/index', post_images: @post_images %>

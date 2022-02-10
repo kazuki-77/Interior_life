@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
   def create
     # カレントユーザー(following_idにcurrent-userのidを格納)に紐づいた
     # relationshipを作成しフォロワーidを取得する
-    following = current_user.relationships.build(follwer_id: params[:user_id])
+    following = current_user.relationships.build(follower_id: params[:user_id])
     following.save
     # request.refererで遷移前のpathに戻る
     # 戻れなかった場合はroot_pathへ飛ばす
