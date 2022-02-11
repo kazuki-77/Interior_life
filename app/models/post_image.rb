@@ -10,5 +10,4 @@ class PostImage < ApplicationRecord
     # whereメソッドの引数で渡されたユーザーidがFavoritesテーブルに存在(exists?)するかどうかを調べる
     favorites.where(user_id: user.id).exists?
   end
-
 end
