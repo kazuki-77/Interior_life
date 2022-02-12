@@ -3,16 +3,15 @@
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
       <h5 class="text-dark bg-light p-4 mb-0">プロフィール編集</h5>
       <div class="form-body p-4">
-        <%= render 'post_images/errors', user: @user %>
         <!-- 編集フォーム -->
         <%= form_with model: @user, local: true do |f| %>
           <%= f.attachment_field :profile_image, class: "w-100" %>
           <div class="input-group mb-3 mt-4">
-            <%= f.label '名前 ', class: 'form-control col-3' %>
+            <%= f.label '名前 ', class: "form-control col-3" %>
             <%= f.text_field :name, class: "form-control" %>
           </div>
           <div class="input-group">
-            <%= f.text_area :introduction, class: "form-control", rows:"3" %>
+            <%= f.text_area :introduction, class: "form-control", rows: "3" %>
           </div>
           <hr>
           <%= f.submit "更新", class: "btn btn-lg btn-block btn-info mt-4" %>
