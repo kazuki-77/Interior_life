@@ -2,40 +2,11 @@
   <div class="row d-flex justify-content-center">
     <div class="col-6">
       <h2><%= @user.name %></h2>
-      <table class="massage table">
-        <thead>
-          <tr>
-            <th class="d-flex align-items-start" style="text-align: right; font-size: 20px;"><%= current_user.name %></th>
-            <th class="text-right" style="text-align: left; font-size: 20px;"><%= @user.name %></th>
-          </tr>
-        </thead>
-        <% @chats.each do |chat| %>
-          <% if chat.user_id == current_user.id %>
-          <tbody style="border:none;">
-            <tr style="border:none">
-              <th style="border:none"></th>
-              <th style="border:none">
-                <p style="text-align: right; border:none;"><%= chat.message %></p>
-              </th>
-            </tr>
-          </tbody>
-          <% else %>
-          <tbody style="border:none;">
-            <tr style="border:none">
-              <th style="border:none">
-                <p style="text-align:left border:none;"><%= chat.message %></p>
-              </th>
-            </tr>
-          </tbody>
-          <% end %>
-        <% end %>
+      <table id="chat_area" class="massage table">
+        <%= render 'chats/chat_index', user: @user, chats: @chats %>
       </table>
-      <div class="text-right">
-        <%= form_with model: @chat, local: true do |f| %>
-          <%= f.text_field :message %>
-          <%= f.hidden_field :room_id %>
-          <%= f.submit "送信", class: "btn btn-sm btn-success chat-btn" %>
-        <% end %>
+      <div class="text-right chat_form">
+        <%= render 'chats/form', chat: @chat %>
       </div>
     </div>
   </div>

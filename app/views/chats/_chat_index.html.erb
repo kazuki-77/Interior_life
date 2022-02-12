@@ -1,0 +1,26 @@
+<thead>
+  <tr>
+    <th class="d-flex align-items-start" style="text-align: right; font-size: 20px;"><%= current_user.name %></th>
+    <th class="text-right" style="text-align: left; font-size: 20px;"><%= user.name %></th>
+  </tr>
+</thead>
+<% chats.each do |chat| %>
+  <% if chat.user_id == current_user.id %>
+    <tbody style="border:none;">
+      <tr style="border:none">
+        <th style="border:none"></th>
+        <th style="border:none">
+          <p style="text-align: right; border:none;"><%= chat.message %></p>
+        </th>
+      </tr>
+    </tbody>
+  <% else %>
+    <tbody style="border:none;">
+      <tr style="border:none">
+        <th style="border:none">
+          <p style="text-align:left border:none;"><%= chat.message %></p>
+        </th>
+      </tr>
+    </tbody>
+  <% end %>
+<% end %>
