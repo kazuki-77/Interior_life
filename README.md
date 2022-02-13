@@ -26,7 +26,8 @@
 - どんなインテリアグッズがあるか調べたいとき
 
 ## 設計書
-準備中・・・
+- ER図 https://drive.google.com/file/d/12efe7GgRTUyeWUvKL88e_5gbDXMclocF/view?usp=sharing
+- テーブル定義書 https://docs.google.com/spreadsheets/d/1MczCx9Fsix4f9uLpeoH9qwdUqZDJ73IRb9L7LGRlK6k/edit?usp=sharing
 
 ## チャレンジ要素一覧
 https://docs.google.com/spreadsheets/d/1AJlE45TYlCQxwSfw-miRMhYGDwt80k7x8JlhNUjsQIQ/edit?usp=sharing
@@ -39,4 +40,4 @@ https://docs.google.com/spreadsheets/d/1AJlE45TYlCQxwSfw-miRMhYGDwt80k7x8JlhNUjs
 - IDE：Cloud9
 
 ## 使用素材
--　随時更新予定
+-　https://pixabay.com/
