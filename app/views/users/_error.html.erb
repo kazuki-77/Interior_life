@@ -1,0 +1,6 @@
+<% if user.errors.any? %>
+ <p class="text-danger pl-3 pt-3">・<%= user.errors.count %>件のエラーが発生しました。</p>
+  <% user.errors.full_messages.each do |message| %>
+    <p class="text-danger pl-3">・<%= message %></p>
+  <% end %>
+<% end %>

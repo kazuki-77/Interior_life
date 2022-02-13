@@ -2,7 +2,7 @@
   <div class="row">
     <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no-image.jpg", class: "rounded-circle" %>
     <% if @user == current_user %>
-      <div class="col-2 d-flex align-items-end"><%= link_to ' 編集',edit_user_path(@user),class: "btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{@user.id} " %></div>
+      <div class="col-2 d-flex align-items-end"><%= link_to ' 編集',edit_user_path(@user),class: "btn btn-outline-secondary btn-block edit_user_#{@user.id} " %></div>
     <% else %>
       <% if @user.is_followed_by?(current_user) %>
         <div class="col-2 d-flex align-items-end">
