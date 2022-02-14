@@ -1,11 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user-box {
+  background-image: image-url('PF-image4');
+  background-size: cover;
+  width: 100%;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  background-attachment: scroll;
+}
 .user_index {
-  font-family: 'Kaushan Scrip', cursive;
+  width: 100%;
+  height: 1000px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
-.container {
-  width: 100%;
-  height:1000px;
+.user_title {
+  font-family: 'Kaushan Scrip', cursive;
+  text-align: center;
+}
+
+td {
+  line-height: 3.5;
 }

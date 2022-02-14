@@ -1,3 +1,32 @@
 // Place all the styles related to the post_images controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-bg-image {
+  background-image: image-url('PF-image3');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.post-form-box {
+  width: 700px;
+  height: 600px;
+  background-color: rgba(255, 255, 255, 0.6);
+  test-align: center;
+  padding: 50px 50px 0 50px;
+}
+
+.submit-btn {
+  width: 300px;
+  height: 50px;
+  margin-left: 170px;
+}
+
+.new-post {
+  font-family: 'Tangerine', cursive;
+  font-size: 35px;
+  letter-spacing: 5px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
