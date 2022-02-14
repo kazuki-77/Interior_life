@@ -1,4 +1,5 @@
 class ChatsController < ApplicationController
+  before_action :authenticate_user!
 
   def show
    # 相手のuser情報を取得
