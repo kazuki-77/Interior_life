@@ -6,13 +6,15 @@
     <%= csp_meta_tag %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Festive&family=Kaushan+Script&family=RocknRoll+One&family=Tangerine:wght@700&display=swap" rel="stylesheet">    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css2?family=Festive&family=Kaushan+Script&family=RocknRoll+One&family=Tangerine:wght@700&display=swap" rel="stylesheet">    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <main>
+      <%= yield %>
+    </main>
     <%= render 'layouts/footer' %>
   </body>
 </html>

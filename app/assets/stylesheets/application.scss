@@ -17,6 +17,10 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
+nav {
+  background-color: #B38355;
+}
+
 .nav-link {
   font-family: 'Kaushan Script', cursive;
   font-size: 20px;
@@ -45,3 +49,12 @@ footer {
     font-size: 20px;
     letter-spacing: 3px;
 }
+
+.logo {
+  font-family: 'Festive', cursive;
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: #000000;
+  margin-left: 20px;
+}
+

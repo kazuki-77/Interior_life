@@ -1,13 +1,15 @@
 <div class="main-visual">
-  <div class="main-visual-text">
+  <div class="main-text-box">
     <p class="top-text">
       Welcome<br>
       to<br>
       Interior Life
     </p>
-    <% unless user_signed_in? %>
-      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary mr-5 sign_in" %>
-      <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary log_in" %>
-    <% end %>
+    <p class="mt-5">
+      <% unless user_signed_in? %>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary mr-5 sign_in" %>
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary log_in" %>
+      <% end %>
+    </p>
   </div>
 </div>
