@@ -1,7 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <h3 class="text-left"><%= @keyword %>の検索結果</h3>
+<div class="post-image-box">
+  <div class="post-image-bg">
+    <div class="card-list-container py-5 shadow-lg">
+      <h3 class="keyword">「 <%= @keyword %> 」の検索結果</h3>
       <%= render 'post_images/index', post_images: @post_images %>
     </div>
   </div>

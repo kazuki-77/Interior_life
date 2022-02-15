@@ -2,17 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-box {
-  background-image: image-url('PF-image4');
+  background-image: image-url('PF-image5');
   background-size: cover;
+  background-position: bottom;
   width: 100%;
-  height: 600px;
-  background-color: rgba(255, 255, 255, 0.6);
-  background-attachment: scroll;
+  height: 100%;
+  background-attachment: fixed;
 }
 .user_index {
   width: 100%;
-  height: 1000px;
-  background-color: rgba(255, 255, 255, 0.6);
+  height: 800px;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .user_title {
@@ -20,6 +20,28 @@
   text-align: center;
 }
 
+.user-introduction {
+  font-family: 'RocknRoll One', sans-serif;
+  font-size: 18px;
+}
+
+.user-show {
+  background-color: #FFFFEF;
+  width: 100%;
+  height: 100%;
+  background-attachment: fixed;
+}
+
 td {
   line-height: 3.5;
+}
+
+.font-color {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 1px;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
 }

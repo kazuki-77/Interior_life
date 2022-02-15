@@ -1,4 +1,8 @@
-<div class="card-list-container py-5">
-  <%= render 'index', post_images: @post_images %>
-  <%= paginate @post_images %>
+<div class="post-image-box">
+  <div class="post-image-bg">
+    <div class="card-list-container py-5 shadow-lg">
+      <%= render 'index', post_images: @post_images %>
+      <%= paginate @post_images %>
+    </div>
+  </div>
 </div>

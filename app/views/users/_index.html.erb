@@ -1,0 +1,11 @@
+<table class="table mt-3 ">
+  <tbody class="text-center">
+    <% users.each do |user| %>
+      <tr>
+        <td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "rounded-circle"%></td>
+        <td><%= link_to user.name, user_path(user.id), class: "font-weight-bold font-color" %></td>
+        <td><%= render 'relationships/follow', user: user %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
