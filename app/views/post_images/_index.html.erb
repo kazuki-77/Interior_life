@@ -20,7 +20,7 @@
               <%= post_image.user.name %>
             <% end %>
           </span>
-          <span><%= link_to "#{post_image.post_comments.count}コメント ", post_image_path(post_image.id), class: "test-dark" %></span>
+          <span>　<%= link_to "#{post_image.post_comments.count}コメント ", post_image_path(post_image.id), class: "comment-count" %>　</span>
           <!-- いいね機能非同期通信化 -->
           <span id="favorite_btn_<%= post_image.id %>">
             <%= render 'favorites/favorite-btn', post_image: post_image %>

@@ -28,6 +28,7 @@
     </div>
     <div class="row name-field"><%= @user.name %></div>
     <hr>
+    <!-- 自己紹介文を書いていた場合のみ表示させる -->
     <% if @user.introduction.present? %>
       <div class="row ml-2">
         <p class="user-introduction">〜introduction〜</p>

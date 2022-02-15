@@ -1,13 +1,15 @@
 <% if post_image.favorited_by?(current_user) %>
-  <span>
+  <p class="favorite-area">
     <%= link_to post_image_favorites_path(post_image), method: :delete, remote: true do %>
-      <i class="fa fa-heart"></i> <%= post_image.favorites.count %>
-    <% end %>
-  </span>
+      <i class="fa fa-heart heart-red"></i>
+      <% end %>
+      <span class="favorite-count"><%= post_image.favorites.count %></span>
+  </p>
 <% else %>
-  <span>
+  <p class="favorite-area">
     <%= link_to post_image_favorites_path(post_image), method: :post, remote: true do %>
-      <i class="fa fa-heart"></i> <%= post_image.favorites.count %>
+      <i class="fa fa-heart heart-blue"></i>
     <% end %>
-  </span>
+      <span class="favorite-count"><%= post_image.favorites.count %></span>
+  </p>
 <% end %>
