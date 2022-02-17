@@ -3,11 +3,36 @@
     <div class="row d-flex justify-content-center">
       <div class="col-8 chats-row">
         <h2 class="p-3 text-center">〜　<%= @user.name %><span class="text-size"> さんとのメッセージ</span>　〜</h2>
-        <table class="table">
-          <%= render 'chats/chat_index', user: @user, chats: @chats %>
+        <table class="table ajax-message">
+          <% @chats.each do |chat| %>
+            <% if chat.user_id == current_user.id %>
+              <tbody style="border:none; text-align: right;">
+                <tr style="border:none">
+                  <th style="border:none"></th>
+                  <th style="border:none">
+                    <div><%= attachment_image_tag chat.user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "mt-3 rounded-circle" %></div>
+                    <p><%= chat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+                    <span class="user-name"><%= chat.user.name %></span></p>
+                    <p class="my-message" style="text-align:left border:none;"><%= chat.message %></p>
+                  </th>
+                </tr>
+              </tbody>
+            <% else %>
+              <tbody style="border:none;">
+                <tr style="border:none">
+                  <th class="text-align-center" style="border:none">
+                    <%= attachment_image_tag chat.user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "mt-3 rounded-circle" %><br>
+                    <p><span class="user-name"><%= chat.user.name %></span>
+                    <%= chat.created_at.strftime('%Y/%m/%d %H:%M:%S') %></p>
+                    <p class="message" style="text-align:left border:none;"><%= chat.message %></p>
+                  </th>
+                </tr>
+              </tbody>
+            <% end %>
+          <% end %>
         </table>
         <hr>
-        <div class="text-right chat_form from-group">
+        <div id="chat-form" class="text-right chat_form form-group">
           <%= render 'chats/form', chat: @chat %>
         </div>
       </div>

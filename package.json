@@ -1,5 +1,7 @@
 {
   "name": "Interior_life",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "swiper": "^8.0.6"
+  }
 }
