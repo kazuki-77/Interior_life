@@ -1,5 +1,5 @@
 <%= form_with model: chat, remote: true do |f| %>
-  <%= f.text_area :message, class: "form-control" %>
+  <%= f.text_area :message, class: "form-control autofoucus" %>
   <%= f.hidden_field :room_id %>
   <%= f.submit "送信", class: "btn btn-success" %>
 <% end %>

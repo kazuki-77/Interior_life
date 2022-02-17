@@ -6,7 +6,6 @@ function slideshow(target){
 　　  // 変数slideに targetの子要素の最後の要素を格納する
 　　　　var slide = $(target).children().last();
 　　　　// 変数slideを1.5秒かけてフェードアウトさせる
-　　　　//
 　　　　$(slide).fadeOut(1500,function(){
 　　　　  // 変数slideをtargetの先頭に追加する
 　　　　　　$(target).prepend(slide);

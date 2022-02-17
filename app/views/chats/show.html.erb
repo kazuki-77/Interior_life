@@ -3,10 +3,10 @@
     <div class="row d-flex justify-content-center">
       <div class="col-8 chats-row">
         <h2 class="p-3 text-center">〜　<%= @user.name %><span class="text-size"> さんとのメッセージ</span>　〜</h2>
-        <table class="table ajax-message">
+        <table class="table">
           <% @chats.each do |chat| %>
             <% if chat.user_id == current_user.id %>
-              <tbody style="border:none; text-align: right;">
+              <tbody style="border:none; text-align: right;" id="ajax-message">
                 <tr style="border:none">
                   <th style="border:none"></th>
                   <th style="border:none">
