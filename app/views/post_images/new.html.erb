@@ -1,21 +1,23 @@
 <div class="bg-image">
-  <div class="form-box">
-    <div class="form-body">
-    <h3 class="text-center new-post">New PostImage</h3>
-      <%= render 'post_images/errors', post_image: @post_image %>
-      <%= form_with model: @post_image, local: true do |f| %>
-        <%= f.attachment_field :image, class: "w-100 mt-3" %>
-        <div class="mb-3 mt-4">
-          <div><%= f.label :"タイトル", class: "from-control" %></div>
-          <%= f.text_field :title, class: "form-control w-50" %>
-        </div>
-        <%= f.label :"説明", class: "from-control" %>
-        <%= f.text_area :caption, class: "form-control", rows:"3" %>
-        <hr>
-        <div class="submit-btn">
-          <%= f.submit "投稿", class: "btn btn-lg btn-block btn-info mt-4" %>
-        </div>
-      <% end %>
+  <div class="container form-box">
+    <div class="row d-flex justify-content-center">
+      <div class="col col-lg-8">
+      <h3 class= "text-center new-post">New PostImage</h3>
+        <%= render 'post_images/errors', post_image: @post_image %>
+        <%= form_with model: @post_image, local: true do |f| %>
+          <%= f.attachment_field :image, class: "w-100 mt-3" %>
+          <div class="mb-3 mt-4">
+            <div><%= f.label :"タイトル", class: "from-control" %></div>
+            <%= f.text_field :title, class: "form-control w-50" %>
+          </div>
+          <%= f.label :"説明", class: "from-control" %>
+          <%= f.text_area :caption, class: "form-control", rows:"3" %>
+          <hr>
+          <div class="submit-btn">
+            <%= f.submit "投稿", class: "btn btn-lg btn-block btn-info mt-4" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

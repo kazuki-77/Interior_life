@@ -1,8 +1,10 @@
 <div class="chat-detail">
-  <div class="container chat-container">
-    <div class="row d-flex justify-content-center">
-      <div class="col-8 chats-row">
-        <h2 class="p-3 text-center">〜　<%= @user.name %><span class="text-size"> さんとのメッセージ</span>　〜</h2>
+  <div class="container">
+    <div class="row">
+      <h5 class="mx-auto col-sm-12 col-lg-6 to-user">~<span class="text-size"><%= @user.name %></span>さん~</h5>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-lg-6 chats-row">
         <table class="table" id="ajax-message">
           <% @chats.each do |chat| %>
             <% if chat.user_id == current_user.id %>

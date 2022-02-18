@@ -17,7 +17,7 @@
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link list-item text-dark mr-3' %></li><br>
         <div class="form-group form-inline pt-1">
           <%= form_with url: search_path, method: :get, local: true do |f| %>
-            <%= f.text_field :keyword, class: "form_control" %>
+            <%= f.text_field :keyword, class: "form_control search-field" %>
             <%= f.submit "search", class: "btn btn-outline-light btn-radius ml-1 form-control text-search" %>
           <% end %>
         </div>

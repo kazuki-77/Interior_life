@@ -1,11 +1,11 @@
 <tbody style="border:none; text-align: right;">
-                <tr style="border:none">
-                  <th style="border:none"></th>
-                  <th style="border:none">
-                    <div><%= attachment_image_tag chat.user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "mt-3 rounded-circle" %></div>
-                    <p><%= chat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
-                    <span class="user-name"><%= chat.user.name %></span></p>
-                    <p class="my-message" style="text-align:left border:none;"><%= chat.message %></p>
-                  </th>
-                </tr>
-              </tbody>
+  <tr style="border:none">
+    <th style="border:none"></th>
+    <th style="border:none">
+      <div><%= attachment_image_tag chat.user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "mt-3 rounded-circle" %></div>
+      <p><%= chat.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      <span class="user-name"><%= chat.user.name %></span></p>
+      <p class="my-message" style="text-align:left border:none;"><%= chat.message %></p>
+    </th>
+  </tr>
+</tbody>
