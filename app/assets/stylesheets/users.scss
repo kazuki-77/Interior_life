@@ -2,17 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .user-box {
-  background-image: image-url('PF-image5');
+  background-color: #FFFFEF;
   background-size: cover;
   background-position: bottom;
   width: 100%;
   height: 100%;
-  background-attachment: fixed;
 }
 .user_index {
   width: 100%;
   height: 800px;
-  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .user_title {

@@ -117,3 +117,9 @@
   line-height: 2.5;
   font-size: 20px;
 }
+
+ @media screen and (max-width:425px) {
+   .attention-list {
+     margin: 0 auto;
+   }
+ }
