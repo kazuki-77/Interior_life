@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RelationshipsController < ApplicationController
   before_action :authenticate_user!
 
@@ -17,5 +19,4 @@ class RelationshipsController < ApplicationController
     following.destroy
     redirect_to request.referer || root_path
   end
-
 end

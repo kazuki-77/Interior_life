@@ -1,8 +1,8 @@
-class PostComment < ApplicationRecord
+# frozen_string_literal: true
 
+class PostComment < ApplicationRecord
   belongs_to :user
   belongs_to :post_image
-  
+
   validates :comment, presence: true
-  
 end

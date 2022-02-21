@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Relationship < ApplicationRecord
   # フォローするユーザーに結びついている
   belongs_to :following, class_name: 'User'

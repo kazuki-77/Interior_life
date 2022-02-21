@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   before_action :authenticate_user!
 
@@ -5,6 +7,7 @@ class UsersController < ApplicationController
     # idがcurrent_user以外のユーザーを取得する
     @users = User.where.not(id: current_user.id)
   end
+
   def show
     @user = User.find(params[:id])
     @post_images = @user.post_images.page(params[:page]).reverse_order.per(4)
@@ -12,9 +15,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    if @user != current_user
-      redirect_to user_path(current_user.id)
-    end
+    redirect_to user_path(current_user.id) if @user != current_user
   end
 
   def update
@@ -44,5 +45,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
-
 end

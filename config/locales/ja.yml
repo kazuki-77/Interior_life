@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: ニックネーム
+      post_image:
+        title: タイトル
+        image: 画像
+        caption: 説明

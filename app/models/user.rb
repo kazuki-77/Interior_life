@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -6,7 +8,7 @@ class User < ApplicationRecord
 
   attachment :profile_image, destroy: false
 
-  validates :name, length: {maximum: 20, minimum: 2}, uniqueness: true
+  validates :name, length: { maximum: 20, minimum: 2 }, uniqueness: true
 
   has_many :post_images, dependent: :destroy
   has_many :post_comments, dependent: :destroy
@@ -29,5 +31,4 @@ class User < ApplicationRecord
   def is_followed_by?(user)
     reverse_of_relationships.find_by(following_id: user.id).present?
   end
-
 end

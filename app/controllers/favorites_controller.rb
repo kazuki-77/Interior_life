@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FavoritesController < ApplicationController
   before_action :authenticate_user!
 
@@ -16,5 +18,4 @@ class FavoritesController < ApplicationController
     favorite.destroy
     # redirect_to request.referer　非同期化のため、コメントアウト
   end
-
 end
