@@ -2,7 +2,9 @@
   <div class="post-image-bg">
     <div class="card-list-container py-5 shadow-lg">
       <%= render 'index', post_images: @post_images %>
-      <%= paginate @post_images %>
+      <div class="row mt-3 d-flex justify-content-around">
+        <%= paginate @post_images, class: "pagination" %>
+      </div>
     </div>
   </div>
 </div>

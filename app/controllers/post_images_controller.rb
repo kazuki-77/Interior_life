@@ -18,7 +18,7 @@ class PostImagesController < ApplicationController
   end
 
   def index
-    @post_images = PostImage.page(params[:page]).reverse_order
+    @post_images = PostImage.page(params[:page]).reverse_order.per(3)
   end
 
   def show
@@ -29,7 +29,6 @@ class PostImagesController < ApplicationController
   def destroy
     @post_image = PostImage.find(params[:id])
     @post_image.destroy
-    flash[:notice] = '投稿を削除しました'
     redirect_to post_images_path
   end
 
