@@ -18,6 +18,7 @@
           </div>
           <%= f.submit "ログイン", class:"btn btn-lg btn-block btn-info mt-5" %>
         <% end %>
+        <%= link_to ' Twitterでログイン', user_twitter_omniauth_authorize_path, method: :post, class:"btn btn-primary fab fa-twitter mt-3" %>
       </div>
     </div>
   </div>

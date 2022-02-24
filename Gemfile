@@ -80,3 +80,8 @@ gem 'rubocop-performance', require:false
 gem 'rubocop-rails', require:false
 
 gem 'rails-i18n'
+
+gem 'omniauth-twitter'
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth-rails_csrf_protection'

@@ -17,6 +17,9 @@
             </div>
             <%= f.email_field :email, autofocus: true, class:"form-control", id:"inputEmail", placeholder:"メールアドレス" %>
           </div>
+          <%if @sns_id.present? %>
+            <%= hidden_field_tag :sns_auth, true %>
+          <% else %>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" aria-hidden="true"><i class="fas fa-lock"></i></span>
@@ -29,7 +32,9 @@
             </div>
             <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", id:"inputConfirmPassword", placeholder:"パスワード確認" %>
           </div>
+          <% end %>
           <%= f.submit "登録", class:"btn btn-block btn-success mt-5" %>
+        <%= link_to ' Twitterで登録', user_twitter_omniauth_authorize_path, method: :post, class:"btn btn-primary fab fa-twitter mt-3" %>
         <% end %>
       </div>
     </div>
