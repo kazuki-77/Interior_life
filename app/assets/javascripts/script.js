@@ -1,7 +1,7 @@
 // function 関数名(引数){処理内容}
 function slideshow(target){
   // setTimeout(処理内容,実行タイミング(ミリ秒))
-  // 第二引数に与えられた実行タイミング(今回は2秒)で、第一引数の処理内容を1度実行
+  // 第二引数に与えられた実行タイミング(今回は4秒)で、第一引数の処理内容を1度実行
 　　setTimeout(function(){
 　　  // 変数slideに targetの子要素の最後の要素を格納する
 　　　　var slide = $(target).children().last();
@@ -14,7 +14,7 @@ function slideshow(target){
 　　　　　　// 引数(#slide-wrapper)の中身を出力する（ループさせる）
 　　　　　　slideshow(target);
 　　　　});
-　　},2000);
+　　},4000);
 }
 
 slideshow('#slide-wrapper');

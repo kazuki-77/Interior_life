@@ -45,8 +45,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       # @sns_id = sns_info[:sns].id
       # render template: 'devise/registrations/new'
       access_token = request.env["omniauth.auth"]["extra"]["access_token"]
+      # twitterのidを取ってきて、ユーザーネームに格納する
       @user.name = access_token.params[:screen_name]
+      # ダミーのemailを作成し、ユーザーのemailに格納する
       @user.email = "#{access_token.params[:user_id]}-#{request.env["omniauth.auth"].provider}@example.com"
+      # 20桁のランダムな数字を生成し、ユーザーのパスワードに格納する
       @user.password = Devise.friendly_token[0, 20]
       @user.save!
       sign_in_and_redirect @user, event: :authentication

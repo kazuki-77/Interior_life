@@ -12,7 +12,7 @@
 }
 .chats-row {
   background-color: #ffe4b5;
-  height: 470px;
+  height: 650px;
   overflow: auto;
   margin: 0 auto;
 }
@@ -37,4 +37,10 @@
 
 .user-name {
   color: blue;
+}
+@media screen and (max-width:425px) {
+  .chats-row {
+  height: 470px;
+
+  }
 }
