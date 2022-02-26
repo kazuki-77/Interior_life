@@ -26,11 +26,11 @@
 - どんなインテリアグッズがあるか調べたいとき
 
 ## 設計書
-- ER図 https://drive.google.com/file/d/12efe7GgRTUyeWUvKL88e_5gbDXMclocF/view?usp=sharing
-- テーブル定義書 https://docs.google.com/spreadsheets/d/1MczCx9Fsix4f9uLpeoH9qwdUqZDJ73IRb9L7LGRlK6k/edit?usp=sharing
+- [ER図](https://drive.google.com/file/d/12efe7GgRTUyeWUvKL88e_5gbDXMclocF/view?usp=sharing)
+- [テーブル定義書](https://docs.google.com/spreadsheets/d/1MczCx9Fsix4f9uLpeoH9qwdUqZDJ73IRb9L7LGRlK6k/edit?usp=sharing)
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1AJlE45TYlCQxwSfw-miRMhYGDwt80k7x8JlhNUjsQIQ/edit?usp=sharing
+- [チャレンジ要素](https://docs.google.com/spreadsheets/d/1AJlE45TYlCQxwSfw-miRMhYGDwt80k7x8JlhNUjsQIQ/edit?usp=sharing)
 
 ## 開発環境
 - OS：Linux(CentOS)
