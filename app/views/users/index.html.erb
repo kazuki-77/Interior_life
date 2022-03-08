@@ -4,6 +4,9 @@
       <div class="col-sm-12 mt-5"  id="follow-ajax">
         <h1 class="user_title">~ Users ~</h1>
         <%= render 'users/index', users: @users %>
+        <div class="row mt-3 d-flex justify-content-around">
+          <%= paginate @users, class: "pagination" %>
+        </div>
       </div>
     </div>
   </div>
