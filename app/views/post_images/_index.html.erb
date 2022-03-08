@@ -1,8 +1,12 @@
 <% post_images.each do |post_image| %>
   <div class="card mx-auto mt-5 pb-2 shadow-lg">
-    <%= link_to post_image_path(post_image.id) do %>
-      <%= attachment_image_tag post_image, :image, class: "card-img-top" %>
-    <% end %>
+    <div  id="slider">
+      <% post_image.interior_images.each do |image| %>
+        <%= link_to post_image_path(post_image.id) do %>
+          <%= attachment_image_tag image, :image, class: "card-img-top" %>
+        <% end %>
+      <% end %>
+    </div>
     <div class="card-body">
       <div class="row">
         <div class="col-auto">
