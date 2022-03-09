@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
   def index
     # idがcurrent_user以外のユーザーを取得する
-    @users = User.where.not(id: current_user.id)
+    @users = User.where.not(id: current_user.id).page(params[:page]).per(8)
   end
 
   def show

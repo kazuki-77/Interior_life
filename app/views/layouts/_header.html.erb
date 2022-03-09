@@ -9,10 +9,10 @@
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav ml-auto pt-2">
       <% if user_signed_in? %>
-        <li><%= link_to 'My Page', user_path(current_user), class: 'nav-link list-item text-dark mr-2' %></li>
+        <li><%= link_to 'My Page', user_path(current_user),data: {"turbolinks"=>false}, class: 'nav-link list-item text-dark mr-2' %></li>
         <li><%= link_to 'About', about_path, class: 'nav-link text-dark mr-2' %></li>
-        <li><%= link_to 'User', users_path, class: 'nav-link list-item text-dark mr-2' %></li>
-        <li><%= link_to 'PostImage', post_images_path, class: 'nav-link list-item text-dark mr-2' %></li>
+        <li><%= link_to 'User', users_path,data: {"turbolinks"=>false}, class: 'nav-link list-item text-dark mr-2' %></li>
+        <li><%= link_to 'PostImage', post_images_path,data: {"turbolinks"=>false}, class: 'nav-link list-item text-dark mr-2' %></li>
         <li><%= link_to 'New PostImage', new_post_image_path, class: 'nav-link list-item text-dark mr-2' %></li>
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link list-item text-dark mr-3' %></li><br>
         <div class="form-group form-inline pt-1">

@@ -16,6 +16,7 @@
  @import "bootstrap";
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
+
 header {
   background-color: #A97443;
 }
@@ -74,3 +75,13 @@ footer {
 .btn-danger {
     opacity: 0.8;
 }
+
+.slick-next {
+    right: 10px; 
+    z-index: 100;
+ }
+
+.slick-prev {
+    left: 10px;
+    z-index: 100;
+ }

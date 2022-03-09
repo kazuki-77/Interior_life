@@ -10,6 +10,7 @@ class PostImagesController < ApplicationController
   def create
     @post_image = PostImage.new(post_image_params) # データを新規登録するためのインスタンスを生成
     @post_image.user_id = current_user.id # ログインユーザーのidを取得し、格納する
+
     if @post_image.save
       redirect_to post_image_path(@post_image)
     else
@@ -35,6 +36,6 @@ class PostImagesController < ApplicationController
   private
 
   def post_image_params
-    params.require(:post_image).permit(:title, :image, :caption)
+    params.require(:post_image).permit(:title, :caption, interior_images_images: [])
   end
 end

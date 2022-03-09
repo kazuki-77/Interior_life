@@ -1,6 +1,10 @@
 <div class="post-image-box py-5">
   <div class="card mx-auto shadow-lg">
-    <%= attachment_image_tag @post_image, :image, class:"card-img-top"; %>
+    <div  id="slider-list">
+      <% @post_image.interior_images.each do |image| %>
+          <%= attachment_image_tag image, :image, class: "card-img-top" %>
+      <% end %>
+    </div>
     <div class="card-body">
       <div class="row">
         <div class="col-2">

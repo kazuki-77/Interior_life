@@ -5,7 +5,8 @@
       <h3 class= "text-center new-post">New PostImage</h3>
         <%= render 'post_images/errors', post_image: @post_image %>
         <%= form_with model: @post_image, local: true do |f| %>
-          <%= f.attachment_field :image, class: "w-100 mt-3" %>
+          <%= f.attachment_field :interior_images_images, class: "w-100 mt-3", multiple: true %>
+          <p>※PCから投稿の方は『Shift + クリック』で画像を複数選択ができます。</p>
           <div class="mb-3 mt-4">
             <div><%= f.label :"タイトル", class: "from-control" %></div>
             <%= f.text_field :title, class: "form-control w-50" %>

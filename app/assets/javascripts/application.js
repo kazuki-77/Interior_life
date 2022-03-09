@@ -18,3 +18,7 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(function() {
+  $('#slider-list').slick({ dots: true});
+});
