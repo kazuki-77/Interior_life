@@ -20,9 +20,5 @@
 //= require_tree .
 
 $(function() {
-  $('#slider').slick({
-      dots: true, 
-      autoplay: true, 
-      autoplaySpeed: 4000, 
-  });
+  $('#slider-list').slick({ dots: true});
 });
