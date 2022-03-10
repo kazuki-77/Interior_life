@@ -17,7 +17,7 @@
           <p class="card-title">説明：<%= @post_image.caption %></p>
           <span>
             <i class="fas fa-user"></i> By
-            <%= link_to user_path(@post_image.user.id) do %>
+            <%= link_to user_path(@post_image.user.id),data: {"turbolinks"=>false} do %>
               <%= @post_image.user.name %>
             <% end %>  ｜
           </span>
