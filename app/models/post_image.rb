@@ -2,7 +2,6 @@
 
 class PostImage < ApplicationRecord
   belongs_to :user
-  # attachment :image # _idは含めない
 
   has_many :interior_images, dependent: :destroy
   accepts_attachments_for :interior_images, attachment: :image
