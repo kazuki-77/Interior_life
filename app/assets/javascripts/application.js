@@ -20,5 +20,5 @@
 //= require_tree .
 
 $(function() {
-  $('#slider-list').slick({ dots: true});
+  $('.slider-list').slick({ dots: true});
 });
