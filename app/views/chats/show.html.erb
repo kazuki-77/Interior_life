@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12 col-lg-6 chats-row">
-        <table class="table" id="ajax-message">
+        <table class="table ajax-message">
           <% @chats.each do |chat| %>
             <% if chat.user_id == current_user.id %>
               <%= render 'message', chat: chat %>
@@ -24,7 +24,7 @@
           <% end %>
         </table>
         <hr>
-        <div id="chat-form" class="text-right chat_form form-group">
+        <div class="text-right chat_form form-group">
           <%= render 'chats/form', chat: @chat %>
         </div>
       </div>

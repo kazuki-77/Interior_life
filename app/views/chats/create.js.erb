@@ -1,4 +1,4 @@
-$('#ajax-message').append("<%= j(render 'message', chat: @chat) %>");
-$('#chat-form').html("<%= j(render 'chats/form', chat: @chat) %>");
+$('.ajax-message').append("<%= j(render 'message', chat: @chat) %>");
+$('.chat-form').html("<%= j(render 'chats/form', chat: @chat) %>");
 $("textarea").val('');
 $('.chats-row').scrollTop($('.chats-row')[0].scrollHeight);
