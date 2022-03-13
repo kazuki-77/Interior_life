@@ -10,7 +10,7 @@
         <div class="col-2">
           <%= attachment_image_tag @post_image.user, :profile_image, :fill, 60, 60, fallback: "no-image.jpg", class: "mt-3 rounded-circle"; %>
         </div>
-        <div class="col-10">
+        <div class="col-10" id="post_count">
           <p class="card-title">
               <strong><i class="fas fa-flag"></i><span> <%= @post_image.title %></span></strong>
           </p>
@@ -22,7 +22,7 @@
             <% end %>  ｜
           </span>
           <span><i class="fa fa-calendar"></i> <%= @post_image.created_at.strftime('%Y/%m/%d') %> ｜ </span>
-          <span><i class="fa fa-comment"></i> <%= link_to "#{@post_image.post_comments.count}", post_image_path(@post_image.id), class: "text-dark" %> ｜ </span>
+          <span class="post_comment_count"><i class="fa fa-comment"></i> <%= link_to "#{@post_image.post_comments.count}", post_image_path(@post_image.id), class: "text-dark" %> ｜ </span>
           <!-- いいね機能 部分テンプレート -->
           <span id="favorite_btn_<%= @post_image.id %>"><%= render 'favorites/favorite-btn', post_image: @post_image %></span>
           <% if @post_image.user == current_user %>
@@ -31,12 +31,12 @@
         </div>
       </div>
       <hr>
-      <div  id="post_image_<%= @post_image.id %>" class="comments card-text">
+      <div class="comments card-text post_image_<%= @post_image.id %>">
         <!-- コメント機能 部分テンプレート -->
         <%= render 'post_comments/post_comment', post_image: @post_image %>
       </div>
       <hr>
-      <div id="comment_area" class="new-comment card-text">
+      <div class="new-comment card-text comment_area">
         <!-- コメントフォーム 部分テンプレート -->
         <%= render 'post_comments/form', post_image: @post_image, post_comment: @post_comment %>
       </div>

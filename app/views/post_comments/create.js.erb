@@ -1,3 +1,4 @@
-$('#post_image_<%= @post_image.id %>').html("<%= j(render 'post_comments/post_comment', post_image: @post_image) %>");
-$('#comment_area').html("<%= j(render 'post_comments/form', post_image: @post_image, post_comment: @post_comment) %>");
-$("post_comment_comment").val('');
+<!--$('#post_count .post_comment_count').html("<i class="fa fa-comment"></i> <%#= link_to "#{@post_image.post_comments.count}", post_image_path(@post_image.id), class: "text-dark" %> ｜");-->
+$('.post_image_<%= @post_image.id %>').html("<%= j(render 'post_comments/post_comment', post_image: @post_image) %>");
+$('.comment_area').html("<%= j(render 'post_comments/form', post_image: @post_image, post_comment: @post_comment) %>");
+$("textarea").val('');
