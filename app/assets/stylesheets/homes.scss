@@ -79,6 +79,10 @@
   opacity: 0.9;
 }
 
+.btn.sign_in {
+  margin-right: 30px;
+}
+
 .btn.sign_in,
 .btn.log_in,
 .btn.guest_sign_in{
@@ -161,12 +165,33 @@
    }
 
   .btn.sign_in,
-  .btn.log_in{
+  .btn.log_in,
+  .guest_sign_in {
     width: 150px;
     color: #fff;
   }
 
   .btn-secondary {
     opacity: 0.8;
+  }
+}
+
+@media screen and (min-width:426px) and (max-width:768px){
+  .top-text {
+    padding-top: 50px;
+    font-size: 70px;
+  }
+
+  .btn.sign_in,
+  .btn.log_in,
+  .btn.guest_sign_in {
+    font-size: 16px;
+    width: 200px;
+    color: #fff;
+    // margin-right: 10px;
+  }
+
+  .btn.sign_in {
+    margin-right: 10px;
   }
 }
