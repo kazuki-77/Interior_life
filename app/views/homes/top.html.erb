@@ -5,12 +5,13 @@
       to<br>
       Interior Life
     </p>
-    <p class="mt-5">
+    <div class="mt-3">
       <% unless user_signed_in? %>
         <%= link_to "Sign up", new_user_registration_path, class: "btn btn-secondary mr-5 sign_in" %>
         <%= link_to "Log in", new_user_session_path, class: "btn btn-secondary log_in" %>
+        <p class="mt-3"><%= link_to "ゲストログイン(閲覧用)", user_guest_sign_in_path, method: :post, class: "btn btn-warning guest_sign_in" %></p>
       <% end %>
-    </p>
+    </div>
   </div>
     <div id="slide-wrapper">
       <div class="slide slide1"></div>

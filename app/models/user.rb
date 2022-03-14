@@ -47,4 +47,13 @@ class User < ApplicationRecord
    end
    { user: user, sns: sns }
   end
+
+  def self.guest
+    find_or_create_by!(email: 'example@guest.com') do |user|
+      user.password =SecureRandom.urlsafe_base64
+      user.password_confirmation = user.password
+      user.name = 'ゲストユーザー'
+      user.introduction = '自己紹介文です。削除すると自己紹介欄が非表示になります。'
+    end
+  end
 end

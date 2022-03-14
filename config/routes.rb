@@ -5,6 +5,9 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks',
     registrations: 'users/registrations'
   }
+  devise_scope :user do
+    post 'user/guest_sign_in', to: 'users/sessions#new_guest'
+  end
   root to: 'homes#top'
   get '/about' => 'homes#about'
   get 'search' => 'searches#search'
