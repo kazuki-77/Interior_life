@@ -12,7 +12,7 @@
           <%= link_to "#{@user.followers.count} フォロワー", followers_user_path(@user) %>
         </p>
       </div>
-      <% if @user == current_user %>
+      <% if @user.me?(current_user.id) %>
         <div class="col-auto d-flex align-items-center"><%= link_to ' 編集',edit_user_path(@user),class: "btn btn-outline-secondary btn-block edit_user_#{@user.id} " %></div>
       <% else %>
         <% if @user.is_followed_by?(current_user) %>

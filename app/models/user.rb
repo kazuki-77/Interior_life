@@ -56,4 +56,8 @@ class User < ApplicationRecord
       user.introduction = '自己紹介文です。削除すると自己紹介欄が非表示になります。'
     end
   end
+  
+  def me?
+    id == user_
+  end
 end
