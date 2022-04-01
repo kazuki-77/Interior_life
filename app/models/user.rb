@@ -37,20 +37,15 @@ class User < ApplicationRecord
   #   # binding.pry
   #   # sns認証したことがあればアソシエーションで取得
   # # 無ければemailでユーザー検索して取得orビルド(保存はしない)
-  #   sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create # first_or_createメソッドを使うことで、DBに保存するかどうかを判断する
-  #   user = User.where("users.email LIKE ?", "#{auth["extra"]["access_token"].params[:user_id]}-%")
-  #             .first_or_initialize(name: auth.info.name, email: auth.info.email)
-  #   # userが登録済みであるか判断
-  # if user.persisted?
-  #   sns.user = user
-  #   sns.save
-  # end
-  # { user: user, sns: sns }
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
-      user.name = auth.info.name
-      user.email = auth.info.email
-      user.password = Dvese.friendly_token[0,20]
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create # first_or_createメソッドを使うことで、DBに保存するかどうかを判断する
+    user = User.where("users.email LIKE ?", "#{auth["extra"]["access_token"].params[:user_id]}-%")
+              .first_or_initialize(name: auth.info.name, email: auth.info.email)
+    # userが登録済みであるか判断
+    if user.persisted?
+      sns.user = user
+      sns.save
     end
+    { user: user, sns: sns }
   end
 
   def self.guest
