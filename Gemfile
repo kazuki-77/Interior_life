@@ -81,6 +81,7 @@ gem 'rubocop-rails', require:false
 
 gem 'rails-i18n'
 
+gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-google-oauth2'
 

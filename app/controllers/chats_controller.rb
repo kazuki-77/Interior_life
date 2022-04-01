@@ -6,10 +6,10 @@ class ChatsController < ApplicationController
   def show
     # 相手のuser情報を取得
     @user = User.find(params[:id])
-    # current_userのuser_roomにあるroom_idの値をpluchメソッドを使い配列で取得し、代入する。
-    rooms = current_user.user_rooms.pluck(:room_id)
+    # current_userのuser_roomにあるroom_idの値をpluckメソッドを使い配列で取得し、代入する。
+    room_ids = current_user.user_rooms.pluck(:room_id)
     # user_roomモデルから、user_idが相手のidが一致するものと、room_idがroomsのどれかに一致するレコードをuser_roomsに代入
-    user_rooms = UserRoom.find_by(user_id: @user.id, room_id: rooms)
+    user_rooms = UserRoom.find_by(user_id: @user.id, room_id: room_ids)
     # もしuser_roomでルームが存在していなかったら
     if user_rooms.nil?
       @room = Room.new

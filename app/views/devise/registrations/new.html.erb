@@ -35,6 +35,7 @@
           <% end %>
           <%= f.submit "登録", class:"btn btn-block btn-success mt-5" %>
         <%= link_to ' Twitterで登録', user_twitter_omniauth_authorize_path, method: :post, class:"btn btn-primary fab fa-twitter mt-3" %>
+        <%= link_to ' Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post, class:"btn btn-primary mt-3" %>
         <% end %>
       </div>
     </div>
